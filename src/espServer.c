@@ -3,7 +3,6 @@
 
 #define RELAY_PIN 5     
 
-// Wi-Fi credentials
 const char* ssid = "Your_SSID";        
 const char* password = "Your_PASSWORD"; 
 
@@ -13,9 +12,7 @@ bool relayState = false;
 
 void toggleRelay() {
   relayState = !relayState;
-  digitalWrite(RELAY_PIN, relayState ? HIGH : LOW); 
-
- 
+  digitalWrite(RELAY_PIN, relayState ? HIGH : LOW);  
   server.send(200, "text/html", getHtml());
 }
 

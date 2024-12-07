@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light 3 Control</title>
+    <script>
+        async function getConfig() {
+            const response = await fetch('/config.json'); 
+            return await response.json();
+        }
+
+       
+        async function controlApp(action) {
+            const config = await getConfig(); 
+            const esp32Url = `http://${config.light3_ip}:80/${action}`; 
+            try {
+                const response = await fetch(esp32Url, { method: 'POST' }); 
+                if (response.ok) {
+                    alert(`Light 3 ${action.toUpperCase()} successful!`);
+                } else {
+                    alert(`Failed to ${action} light 3. Response status: ${response.status}`);
+                }
+            } catch (error) {
+                console.error(error);
+                alert('Error: Unable to communicate with the ESP32 server.');
+            }
+        }
+        </script>
+        <link rel="stylesheet" href="light.css">
+</head>
+<body>
+    <h1>Control Light 2</h1>
+    <div class="button-container">
+        <div class="button-card">
+            <button onclick="controlApp('on')">Turn ON</button>
+        </div>
+        <div class="button-card">
+            <button onclick="controlApp('off')">Turn OFF</button>
+        </div>
+    </div>
+    <a href="/" class="back-link">Go Back</a>
+</body>
+</html>

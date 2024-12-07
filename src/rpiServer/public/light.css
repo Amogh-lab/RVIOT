@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin-top: 50px;
+}
+h1 {
+    color: #333;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+.button-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 150px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.button-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+.button-card button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.button-card button:hover {
+    background-color: #0056b3;
+}
+.back-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: none;
+}
+.back-link:hover {
+    color: #0056b3;
+}
+</style>
