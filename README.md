@@ -38,3 +38,18 @@ node -v
 
 ```
 ![image](./images/pi.jpg)
+
+**Setting up the server**  
+```bash
+git clone https://github.com/Charan-Sharan/RVIOT.git ~/Desktop/RVIOT
+cd ~/Desktop/RVIOT/src/rpiServer/
+npm install
+nano public/config.json #update the ip address of the appliances  
+node app.js
+```
+
+**dependencies**   
+```
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+```
